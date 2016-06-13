@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="dept" EntityType="Model1.dept" />
+    <EntitySet Name="emp" EntityType="Model1.emp" />
+    <AssociationSet Name="FK_emp_dept" Association="Model1.FK_emp_dept">
+      <End Role="dept" EntitySet="dept" />
+      <End Role="emp" EntitySet="emp" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="dept">
+    <Key>
+      <PropertyRef Name="DId" />
+    </Key>
+    <Property Name="DId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ddrre" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="emp" Relationship="Model1.FK_emp_dept" FromRole="dept" ToRole="emp" />
+  </EntityType>
+  <EntityType Name="emp">
+    <Key>
+      <PropertyRef Name="EId" />
+    </Key>
+    <Property Name="EId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ezhiw" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ETime" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ejiben" Type="Int32" Nullable="false" />
+    <Property Name="Ejiangjin" Type="Int32" Nullable="false" />
+    <Property Name="Eddre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="dept" Relationship="Model1.FK_emp_dept" FromRole="emp" ToRole="dept" />
+  </EntityType>
+  <Association Name="FK_emp_dept">
+    <End Type="Model1.dept" Role="dept" Multiplicity="1" />
+    <End Type="Model1.emp" Role="emp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dept">
+        <PropertyRef Name="DId" />
+      </Principal>
+      <Dependent Role="emp">
+        <PropertyRef Name="DId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,117 @@
+﻿@model IEnumerable<Model.emp>
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<html>
+<head>
+    <link href="~/boot/css/cloud-admin.css" rel="stylesheet" />
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Cloud Admin | Simple Tables</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- STYLESHEETS --><!--[if lt IE 9]><script src="js/flot/excanvas.min.js"></script><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
+    <link rel="stylesheet" type="text/css" href="~/boot/css/cloud-admin.css">
+    <link rel="stylesheet" type="text/css" href="~/boot/css/themes/default.css" id="skin-switcher">
+    <link rel="stylesheet" type="text/css" href="~/boot/css/responsive.css">
+
+    <link href="~/boot/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- DATE RANGE PICKER -->
+    <link rel="stylesheet" type="text/css" href="~/boot/js/bootstrap-daterangepicker/daterangepicker-bs3.css" />
+    <!-- TABLE CLOTH -->
+    <link rel="stylesheet" type="text/css" href="~/boot/js/tablecloth/css/tablecloth.min.css" />
+    <!-- FONTS -->
+    <link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div class="col-md-6">
+        <!-- BOX -->
+        <div class="box border blue">
+            <div class="box-title">
+                <h4><i class="fa fa-table"></i>员工管理</h4>
+                <div class="tools">
+                    <a href="#box-config" data-toggle="modal" class="config">
+                        <i class="fa fa-cog"></i>
+                    </a>
+                    <a href="javascript:;" class="reload">
+                        <i class="fa fa-refresh"></i>
+                    </a>
+                    <a href="javascript:;" class="collapse">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                    <a href="javascript:;" class="remove">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="box-body">
+                <table class="table table-striped">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.EId)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.EName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Ezhiw)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ETime)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Ejiben)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Ejiangjin)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Eddre)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EId)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Ezhiw)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ETime)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Ejiben)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Ejiangjin)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Eddre)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Editss", "Editss", new { id = item.EId }) |
+                                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+</body>
+</html>

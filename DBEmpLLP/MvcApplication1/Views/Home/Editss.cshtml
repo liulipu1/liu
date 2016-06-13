@@ -1,0 +1,114 @@
+﻿@model Model.emp
+
+@{
+    ViewBag.Title = "Editss";
+}
+
+<h2>Editss</h2>
+<html>
+<head>
+    <link href="~/boot/css/cloud-admin.css" rel="stylesheet" />
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Cloud Admin | Simple Tables</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- STYLESHEETS --><!--[if lt IE 9]><script src="js/flot/excanvas.min.js"></script><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
+    <link rel="stylesheet" type="text/css" href="~/boot/css/cloud-admin.css">
+    <link rel="stylesheet" type="text/css" href="~/boot/css/themes/default.css" id="skin-switcher">
+    <link rel="stylesheet" type="text/css" href="~/boot/css/responsive.css">
+
+    <link href="~/boot/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- DATE RANGE PICKER -->
+    <link rel="stylesheet" type="text/css" href="~/boot/js/bootstrap-daterangepicker/daterangepicker-bs3.css" />
+    <!-- TABLE CLOTH -->
+    <link rel="stylesheet" type="text/css" href="~/boot/js/tablecloth/css/tablecloth.min.css" />
+    <!-- FONTS -->
+    <link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+
+
+        <fieldset>
+            <legend>emp</legend>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.EId)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.EId)
+                @Html.ValidationMessageFor(model => model.EId)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.EName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.EName)
+                @Html.ValidationMessageFor(model => model.EName)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Ezhiw)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Ezhiw)
+                @Html.ValidationMessageFor(model => model.Ezhiw)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ETime)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ETime)
+                @Html.ValidationMessageFor(model => model.ETime)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Ejiben)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Ejiben)
+                @Html.ValidationMessageFor(model => model.Ejiben)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Ejiangjin)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Ejiangjin)
+                @Html.ValidationMessageFor(model => model.Ejiangjin)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Eddre)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Eddre)
+                @Html.ValidationMessageFor(model => model.Eddre)
+            </div>
+
+            <p>
+                <input type="submit" value="Save" />
+            </p>
+        </fieldset>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+</body>
+</html>

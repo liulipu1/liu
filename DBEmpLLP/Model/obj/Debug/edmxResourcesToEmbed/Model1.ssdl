@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="dept" EntityType="Model1.Store.dept" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="emp" EntityType="Model1.Store.emp" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_emp_dept" Association="Model1.Store.FK_emp_dept">
+      <End Role="dept" EntitySet="dept" />
+      <End Role="emp" EntitySet="emp" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="dept">
+    <Key>
+      <PropertyRef Name="DId" />
+    </Key>
+    <Property Name="DId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Ddrre" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="emp">
+    <Key>
+      <PropertyRef Name="EId" />
+    </Key>
+    <Property Name="EId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Ezhiw" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ETime" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Ejiben" Type="int" Nullable="false" />
+    <Property Name="Ejiangjin" Type="int" Nullable="false" />
+    <Property Name="Eddre" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="DId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_emp_dept">
+    <End Role="dept" Type="Model1.Store.dept" Multiplicity="1" />
+    <End Role="emp" Type="Model1.Store.emp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dept">
+        <PropertyRef Name="DId" />
+      </Principal>
+      <Dependent Role="emp">
+        <PropertyRef Name="DId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

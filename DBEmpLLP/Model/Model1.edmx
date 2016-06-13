@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="dept" EntityType="Model1.Store.dept" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="emp" EntityType="Model1.Store.emp" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_emp_dept" Association="Model1.Store.FK_emp_dept">
+      <End Role="dept" EntitySet="dept" />
+      <End Role="emp" EntitySet="emp" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="dept">
+    <Key>
+      <PropertyRef Name="DId" />
+    </Key>
+    <Property Name="DId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Ddrre" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="emp">
+    <Key>
+      <PropertyRef Name="EId" />
+    </Key>
+    <Property Name="EId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Ezhiw" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ETime" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Ejiben" Type="int" Nullable="false" />
+    <Property Name="Ejiangjin" Type="int" Nullable="false" />
+    <Property Name="Eddre" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="DId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_emp_dept">
+    <End Role="dept" Type="Model1.Store.dept" Multiplicity="1" />
+    <End Role="emp" Type="Model1.Store.emp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dept">
+        <PropertyRef Name="DId" />
+      </Principal>
+      <Dependent Role="emp">
+        <PropertyRef Name="DId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="dept" EntityType="Model1.dept" />
+          <EntitySet Name="emp" EntityType="Model1.emp" />
+          <AssociationSet Name="FK_emp_dept" Association="Model1.FK_emp_dept">
+            <End Role="dept" EntitySet="dept" />
+            <End Role="emp" EntitySet="emp" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="dept">
+          <Key>
+            <PropertyRef Name="DId" />
+          </Key>
+          <Property Name="DId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ddrre" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="emp" Relationship="Model1.FK_emp_dept" FromRole="dept" ToRole="emp" />
+        </EntityType>
+        <EntityType Name="emp">
+          <Key>
+            <PropertyRef Name="EId" />
+          </Key>
+          <Property Name="EId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ezhiw" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ETime" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ejiben" Type="Int32" Nullable="false" />
+          <Property Name="Ejiangjin" Type="Int32" Nullable="false" />
+          <Property Name="Eddre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="dept" Relationship="Model1.FK_emp_dept" FromRole="emp" ToRole="dept" />
+        </EntityType>
+        <Association Name="FK_emp_dept">
+          <End Type="Model1.dept" Role="dept" Multiplicity="1" />
+          <End Type="Model1.emp" Role="emp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dept">
+              <PropertyRef Name="DId" />
+            </Principal>
+            <Dependent Role="emp">
+              <PropertyRef Name="DId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="dept">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.dept)">
+        <MappingFragment StoreEntitySet="dept">
+          <ScalarProperty Name="DId" ColumnName="DId" />
+          <ScalarProperty Name="DName" ColumnName="DName" />
+          <ScalarProperty Name="Ddrre" ColumnName="Ddrre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="emp">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.emp)">
+        <MappingFragment StoreEntitySet="emp">
+          <ScalarProperty Name="EId" ColumnName="EId" />
+          <ScalarProperty Name="EName" ColumnName="EName" />
+          <ScalarProperty Name="Ezhiw" ColumnName="Ezhiw" />
+          <ScalarProperty Name="ETime" ColumnName="ETime" />
+          <ScalarProperty Name="Ejiben" ColumnName="Ejiben" />
+          <ScalarProperty Name="Ejiangjin" ColumnName="Ejiangjin" />
+          <ScalarProperty Name="Eddre" ColumnName="Eddre" />
+          <ScalarProperty Name="DId" ColumnName="DId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

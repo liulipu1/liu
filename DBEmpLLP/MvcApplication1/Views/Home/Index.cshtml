@@ -1,0 +1,103 @@
+﻿@model PagedList<Model.dept>
+@using Webdiyer.WebControls.Mvc;
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+    @*<script>location.href='/Home/Index'</script>*@
+</p>
+<html>
+<head>
+    <link href="~/boot/css/cloud-admin.css" rel="stylesheet" />
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Cloud Admin | Simple Tables</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- STYLESHEETS --><!--[if lt IE 9]><script src="js/flot/excanvas.min.js"></script><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
+    <link rel="stylesheet" type="text/css" href="~/boot/css/cloud-admin.css">
+    <link rel="stylesheet" type="text/css" href="~/boot/css/themes/default.css" id="skin-switcher">
+    <link rel="stylesheet" type="text/css" href="~/boot/css/responsive.css">
+
+    <link href="~/boot/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- DATE RANGE PICKER -->
+    <link rel="stylesheet" type="text/css" href="~/boot/js/bootstrap-daterangepicker/daterangepicker-bs3.css" />
+    <!-- TABLE CLOTH -->
+    <link rel="stylesheet" type="text/css" href="~/boot/js/tablecloth/css/tablecloth.min.css" />
+    <!-- FONTS -->
+    <link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div class="col-md-6">
+        <!-- BOX -->
+        <div class="box border blue">
+            <div class="box-title">
+                <h4><i class="fa fa-table"></i>部门管理</h4>
+                <div class="tools">
+                    <a href="#box-config" data-toggle="modal" class="config">
+                        <i class="fa fa-cog"></i>
+                    </a>
+                    <a href="javascript:;" class="reload">
+                        <i class="fa fa-refresh"></i>
+                    </a>
+                    <a href="javascript:;" class="collapse">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                    <a href="javascript:;" class="remove">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="box-body">
+                <table class="table table-striped">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.DId)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.DName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Ddrre)
+                        </th>
+                        <th>
+                            数量
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DId)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Ddrre)
+                            </td>
+                            <td>
+                                @Html.ActionLink(@item.emp.Count().ToString(), "Details", new { id = item.DId })
+                                @*<a href="Details">@ViewBag.num</a>*@
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.DId }) |
+                                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.DId })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+
+                @Html.Pager(Model, new PagerOptions { PageIndexParameterName = "pageIndex" })
+</body>
+</html>

@@ -1,0 +1,11 @@
+C:\Users\Administrator\Desktop\刘立普月考\DBEmpLLP\LID\Model.dll.config
+C:\Users\Administrator\Desktop\刘立普月考\DBEmpLLP\LID\Model.dll
+C:\Users\Administrator\Desktop\刘立普月考\DBEmpLLP\LID\Model.pdb
+C:\Users\Administrator\Desktop\刘立普月考\DBEmpLLP\Model\obj\Debug\Model.dll
+C:\Users\Administrator\Desktop\刘立普月考\DBEmpLLP\Model\obj\Debug\Model.pdb
+F:\作业\小实训（U3D应用）\刘立普月考\刘立普月考\DBEmpLLP\LID\Model.dll.config
+F:\作业\小实训（U3D应用）\刘立普月考\刘立普月考\DBEmpLLP\LID\Model.dll
+F:\作业\小实训（U3D应用）\刘立普月考\刘立普月考\DBEmpLLP\LID\Model.pdb
+F:\作业\小实训（U3D应用）\刘立普月考\刘立普月考\DBEmpLLP\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+F:\作业\小实训（U3D应用）\刘立普月考\刘立普月考\DBEmpLLP\Model\obj\Debug\Model.dll
+F:\作业\小实训（U3D应用）\刘立普月考\刘立普月考\DBEmpLLP\Model\obj\Debug\Model.pdb

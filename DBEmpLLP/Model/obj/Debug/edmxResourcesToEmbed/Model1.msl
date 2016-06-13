@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="dept">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.dept)">
+        <MappingFragment StoreEntitySet="dept">
+          <ScalarProperty Name="DId" ColumnName="DId" />
+          <ScalarProperty Name="DName" ColumnName="DName" />
+          <ScalarProperty Name="Ddrre" ColumnName="Ddrre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="emp">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.emp)">
+        <MappingFragment StoreEntitySet="emp">
+          <ScalarProperty Name="EId" ColumnName="EId" />
+          <ScalarProperty Name="EName" ColumnName="EName" />
+          <ScalarProperty Name="Ezhiw" ColumnName="Ezhiw" />
+          <ScalarProperty Name="ETime" ColumnName="ETime" />
+          <ScalarProperty Name="Ejiben" ColumnName="Ejiben" />
+          <ScalarProperty Name="Ejiangjin" ColumnName="Ejiangjin" />
+          <ScalarProperty Name="Eddre" ColumnName="Eddre" />
+          <ScalarProperty Name="DId" ColumnName="DId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

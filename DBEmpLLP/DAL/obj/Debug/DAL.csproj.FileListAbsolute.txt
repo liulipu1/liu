@@ -1,0 +1,10 @@
+C:\Users\Administrator\Desktop\刘立普月考\DBEmpLLP\LID\DAL.dll
+C:\Users\Administrator\Desktop\刘立普月考\DBEmpLLP\LID\DAL.pdb
+C:\Users\Administrator\Desktop\刘立普月考\DBEmpLLP\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\刘立普月考\DBEmpLLP\DAL\obj\Debug\DAL.dll
+C:\Users\Administrator\Desktop\刘立普月考\DBEmpLLP\DAL\obj\Debug\DAL.pdb
+F:\作业\小实训（U3D应用）\刘立普月考\刘立普月考\DBEmpLLP\LID\DAL.dll
+F:\作业\小实训（U3D应用）\刘立普月考\刘立普月考\DBEmpLLP\LID\DAL.pdb
+F:\作业\小实训（U3D应用）\刘立普月考\刘立普月考\DBEmpLLP\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+F:\作业\小实训（U3D应用）\刘立普月考\刘立普月考\DBEmpLLP\DAL\obj\Debug\DAL.dll
+F:\作业\小实训（U3D应用）\刘立普月考\刘立普月考\DBEmpLLP\DAL\obj\Debug\DAL.pdb
